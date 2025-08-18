@@ -17,7 +17,7 @@ namespace AppMVC.Net.Controllers
             _productService = productService;
         }
         [TempData]
-        public string StatusMessge { get; set; }
+        public string? StatusMessge { get; set; }
         public IActionResult Index()
         {
             _logger.LogInformation("Index First action called");
