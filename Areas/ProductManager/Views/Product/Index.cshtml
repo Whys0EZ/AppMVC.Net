@@ -1,0 +1,15 @@
+@using AppMVC.Net.Models;
+@model List<ProductModel>;
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h1 class="text-info">Danh sách sản phẩm</h1>
+<div class="list-group">
+    @foreach (var product in Model)
+    {
+        <a asp-action="Detail" asp-route-id="@product.Id" class="list-group-item list-group-item-action">
+            @product.Name
+        </a>
+    }
+</div>

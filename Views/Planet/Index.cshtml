@@ -1,0 +1,23 @@
+@inject AppMVC.Net.Services.PlanetService PlanetService
+@{
+    ViewData["Title"] = "Planet";
+}
+<h1 class="text-info"> Các hành tinh trong hệ Mặt Trời</h1>
+<div class="list-group">
+    @foreach (var planet in PlanetService)
+    {
+        <a asp-action="Detail"  asp-route-id="@planet.Id" class="list-group-item list-group-item-action">
+            @planet.VnName - @planet.Name
+        </a>
+    }
+</div>
+
+<hr>
+<div class="list-group ">
+    @foreach (var planet in PlanetService)
+    {
+        <a asp-action="@planet.Name" class="list-group-item list-group-item-action bg-light">
+            @planet.VnName - @planet.Name
+        </a>
+    }
+</div>
