@@ -1,5 +1,6 @@
 using System.Net;
 using AppMVC.Net.ExtendMethods;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,9 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<AppMVC.Net.Models.ProductService>(); // Register ProductService as a singleton
 builder.Services.AddSingleton<AppMVC.Net.Services.PlanetService>(); // Register PlanetModel as a singleton
+
+builder.Services.AddDbContext<AppMVC.Net.Models.AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var app = builder.Build();
