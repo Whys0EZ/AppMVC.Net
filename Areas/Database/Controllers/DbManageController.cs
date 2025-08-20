@@ -23,7 +23,7 @@ namespace AppMVC.Net.Areas.Database.Controllers
             return View();
         }
         [TempData]
-        public string StatusMessge { get; set; }
+        public string? StatusMessage { get; set; }
 
         [HttpGet]
         public IActionResult DeleteDb()
@@ -35,7 +35,7 @@ namespace AppMVC.Net.Areas.Database.Controllers
         public async Task<IActionResult> DeleteDbAsync()
         {
             var success = await _dbContext.Database.EnsureDeletedAsync();
-            StatusMessge = success ? "Database deleted successfully." : "Failed to delete the database.";
+            StatusMessage = success ? "Database deleted successfully." : "Failed to delete the database.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -43,7 +43,7 @@ namespace AppMVC.Net.Areas.Database.Controllers
         public async Task<IActionResult> ApplyMigrations()
         {
             await _dbContext.Database.MigrateAsync();
-            StatusMessge = "Migrations applied successfully.";
+            StatusMessage = "Migrations applied successfully.";
             return RedirectToAction(nameof(Index));
         }
 

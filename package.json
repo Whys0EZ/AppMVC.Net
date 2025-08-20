@@ -1,0 +1,35 @@
+{
+  "name": "appmvc.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whys0EZ/AppMVC.Net.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Whys0EZ/AppMVC.Net/issues"
+  },
+  "homepage": "https://github.com/Whys0EZ/AppMVC.Net#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-less": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "rimraf": "^6.0.1",
+    "sass": "^1.90.0"
+  }
+}

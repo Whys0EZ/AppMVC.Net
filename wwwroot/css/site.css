@@ -7,7 +7,6 @@ html {
     font-size: 16px;
   }
 }
-
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -18,5 +17,53 @@ html {
 }
 
 body {
+  background: white;
   margin-bottom: 60px;
+}
+
+.nav-appmvc {
+  background: rgba(0, 0, 0, 0.8);
+}
+.nav-appmvc .text-dark {
+  color: white !important;
+}
+.nav-appmvc .text-dark:hover {
+  color: #258cfb !important;
+}
+.nav-appmvc .navbar-brand {
+  color: rgb(217, 58, 223) !important;
+}
+.nav-appmvc .navbar-brand:hover {
+  color: #258cfb !important;
+}
+.nav-appmvc .dropdown-toggle {
+  border-color: white !important;
+}
+.nav-appmvc .dropdown-toggle:hover {
+  color: #ffffff !important;
+}
+
+.contact-firstcol {
+  background-color: rgb(177, 116, 247);
+  color: white;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.contact-firstcol h4 {
+  line-height: 40px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.contact-firstcol img {
+  max-width: 100px;
+  height: auto;
+}
+
+.formcontact label {
+  font-weight: 700;
+}
+
+.contact_S {
+  margin-top: 20px;
 }
