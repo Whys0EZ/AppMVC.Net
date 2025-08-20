@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using AppMVC.Net.Models.Contacts;
-using AppMVC.Net.Models.FaultCodes;
+
 
 namespace AppMVC.Net.Models
 {
@@ -39,6 +39,6 @@ namespace AppMVC.Net.Models
         // public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; } // DbSet for Contact model
 
-        public DbSet<Fault_Code> FaultCodes { get; set; } // DbSet for FaultCode model
+        // public DbSet<Fault_Code> FaultCodes { get; set; } // DbSet for FaultCode model
     }
 }
