@@ -1,0 +1,62 @@
+@using Microsoft.EntityFrameworkCore
+@inject AppDbContext dbContext
+@{
+    ViewData["Title"] = "Database Management";
+    var connectionString = dbContext.Database.GetDbConnection();
+    var can_connect = dbContext.Database.CanConnect();
+    var pendingMigrations = dbContext.Database.GetPendingMigrations();
+    var appliedMigrations = dbContext.Database.GetAppliedMigrations();
+}
+<h1>Database Management</h1>
+
+<partial name="_AlertMessage" />
+
+<h2>Thông tin Database</h2>
+<p> - DatabaseName: @connectionString.Database</p>
+<p> - Server: @connectionString.DataSource</p>
+<p> - State: @connectionString.State</p>
+
+<p> - Pending Migrations: @string.Join(", ", pendingMigrations)</p>
+
+<hr>
+<h2>Applied Migrations</h2>
+<ul>
+    @foreach (var migration in appliedMigrations)
+    {
+        <li>@migration</li>
+    }
+</ul>
+
+<hr>
+@if (can_connect)
+{
+    <p class="text-success">Database connection is successful.</p>
+    await dbContext.Database.OpenConnectionAsync();
+    var table = dbContext.Database.GetDbConnection().GetSchema("Tables");
+    <ul>
+        @foreach (System.Data.DataRow row in table.Rows)
+        {
+            <li>@row["TABLE_NAME"]</li>
+        }
+    </ul>
+    <a class="btn btn-danger" asp-action="DeleteDb">Delete DB(@connectionString.Database)</a>
+}
+else
+{
+    <p class="text-danger">Failed to connect to the database.</p>
+}
+
+@if (pendingMigrations.Any())
+{
+    <h2>Pending Migrations</h2>
+    <ul>
+        @foreach (var migration in pendingMigrations)
+        {
+            <li>@migration</li>
+        }
+    </ul>
+    <form method="post">
+        <button type="submit" class="btn btn-primary" asp-action="ApplyMigrations">Apply Migrations</button>
+    </form>
+    
+}

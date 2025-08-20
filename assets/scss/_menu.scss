@@ -1,0 +1,21 @@
+.nav-appmvc {
+    background: rgba( 0,0,0,0.8);
+    .text-dark {
+        color: white !important;
+        &:hover {
+            color: #258cfb !important;
+        }
+    }
+    .navbar-brand {
+        color: rgb(217, 58, 223) !important;
+        &:hover {
+            color: #258cfb !important;
+        }
+    }
+    .dropdown-toggle {
+        border-color: white !important;
+        &:hover {
+            color: #ffffff !important;
+        }
+    }
+}
